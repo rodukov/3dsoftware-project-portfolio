@@ -211,5 +211,8 @@ export default { name: 'features' }
 @media (max-width: 815px) {
     .features-grid { display: inline-block; }
 }
+@media (max-width: 869px) {
+    .features { margin: 6px; }
+}
 </style>
 

@@ -163,4 +163,7 @@ export default { name: 'download' }
         column-gap: 20px;
      }
 }
+@media (max-width: 869px) {
+    .download { margin: 6px ; }
+}
 </style>

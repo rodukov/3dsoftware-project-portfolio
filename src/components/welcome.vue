@@ -5,7 +5,7 @@
         <p class="default desc">Use matter. Use sculpting.<br> Modern engines. Feel like a fish in water in 3D.</p>
     </div>
     <div class="vector-draw">
-        <img src="../assets/Vector.png">
+        <img src="../assets/Vector.png" class="imgv">
     </div>
     
 </div>
@@ -68,5 +68,19 @@ export default {
 .vector-draw {
     margin-left: auto;
     margin-right: auto;
+}
+
+@media (max-width: 1413px) {
+
+    .vector-draw { position: absolute; z-index: -1; }
+}
+@media (max-width: 869px) {
+    .imgv {
+        height: 80%;
+        width: 80%;
+    }
+    .main { font-size: 70px; }
+    .desc { font-size: 22px; }
+    .welcome { margin: 6px ; }
 }
 </style>

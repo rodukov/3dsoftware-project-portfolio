@@ -119,5 +119,7 @@ export default {
     grid-template-columns: 100%;        
     }
 }
-
+@media (max-width: 869px) {
+    .contact { margin: 6px ; }
+}
 </style>
