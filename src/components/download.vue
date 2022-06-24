@@ -119,8 +119,13 @@ export default { name: 'download' }
     background: #000000;
     border-radius: 25px;
     margin-bottom: 20px;
-
+    transition: .2s;
 }
+.download-item:hover {
+    background: radial-gradient(100% 100% at 100% 100%, #f475ff 0%, #80f6ff 34.9%, #ff8453 87.54%);
+    transform: scale(1.01);
+}
+
 .download-items { display: flex; justify-content: center;}
 .text {
     font-family: 'Inter';
