@@ -204,5 +204,12 @@ export default { name: 'features' }
     grid-template-columns: 33.333333% 33.333333% 33.333333% ;
     column-gap: 17px;
 }
+
+@media (max-width: 1350px) {
+    .features-grid { display: grid; grid-template-columns: 50% 50%; }
+}
+@media (max-width: 815px) {
+    .features-grid { display: inline-block; }
+}
 </style>
 

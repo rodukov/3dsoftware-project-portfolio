@@ -143,7 +143,24 @@ export default { name: 'download' }
     width: 38px;
 
 }
-.imgc {
 
+@media (max-width: 1537px ) {
+    .grid { display: grid;
+        grid-template-columns: 33% 33% 33%;
+        column-gap: 20px; }
+}
+
+@media (max-width: 945px ) {
+    .grid { display: grid;
+        grid-template-columns: 50% 50%;
+        column-gap: 20px; }
+}
+
+@media (max-width: 1537px ) {
+    .grid {
+        display: grid;
+        grid-template-columns: 100%;
+        column-gap: 20px;
+     }
 }
 </style>

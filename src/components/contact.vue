@@ -91,4 +91,33 @@ export default {
     gap: 22px;
 }
 
+@media (max-width: 1385px) {
+    .grid
+    {
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;        
+    }
+}
+@media (max-width: 1107px) {
+    .grid
+    {
+    display: grid;
+    grid-template-columns: 32% 32% 32%;        
+    }
+}
+@media (max-width: 881px) {
+    .grid
+    {
+    display: grid;
+    grid-template-columns: 49% 49%;        
+    }
+}
+@media (max-width: 609px) {
+    .grid
+    {
+    display: grid;
+    grid-template-columns: 100%;        
+    }
+}
+
 </style>
