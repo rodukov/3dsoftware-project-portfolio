@@ -1,8 +1,16 @@
 <template>
+<div class="adaptive-headers">
+    <button class="menu" v-on:click="add_active()" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
+      <svg width="100" height="100" viewBox="0 0 100 100">
+        <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+        <path class="line line2" d="M 20,50 H 80" />
+        <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+      </svg>
+    </button>
+    
 <div class="headers">
-        <div class="logo"></div>
+    <div class="logo"></div>
     <div class="header-items-left">
-
         <div class="header-item-container"><p class="header-item default">Updates</p></div>
         <div class="header-item-container"><p class="header-item default">Source</p></div>
         <div class="header-item-container"><p class="header-item default">Twitter</p></div>
@@ -12,10 +20,22 @@
         <div class="header-download-container" style="display: inline-block; margin-top: auto; margin-bottom: auto; margin-right: auto; "><p class="header-download default">Download</p></div>
     </div>
 </div>
+</div>
 </template>
 
 <script>
-export default { name: 'headers' }
+export default {
+    name: 'headers',
+    data() { return { active: false }},
+    methods: {
+        add_active: function() {
+            this.active = !this.active
+            var element = document.querySelector(".headers");
+            if(this.active) { element.classList.add("active"); }
+            else { element.classList.remove("active"); }
+        }
+    }
+}
 </script>
 
 <style scoped>
@@ -55,7 +75,7 @@ export default { name: 'headers' }
     margin-left: auto;
 }
 .header-item-container {
-    display: inline-block;
+
     margin-top: auto; 
     margin-bottom: auto;
     padding: 25px; 
@@ -121,4 +141,115 @@ export default { name: 'headers' }
   -webkit-mask-composite: xor;
           mask-composite: exclude; 
 }
+
+
+.menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+  display: none;
+}
+.line {
+  fill: none;
+  stroke: rgb(255, 255, 255);
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+
+@media (max-width: 914px) {
+    .adaptive-headers {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 35px;
+    }
+    .headers {
+        display: inline-block;
+        width: 100%;
+        background: inherit;
+        margin: 0; padding: 0;
+        transform: translateX(-100%);
+        transition: 0.4s;
+        position: absolute;
+    }
+
+
+    .active {
+        transform: translateX(0%);
+    }
+    
+    .adaptive-headers {
+        background: rgb(0, 0, 0);
+    }
+    .headers {
+        background: rgb(0, 0, 0);
+        border-radius: 0;
+    }
+    .header-items-left {
+        background: rgb(0, 0, 0);
+    }
+    .header-items-right {
+        background: rgb(0, 0, 0);
+        border-radius: 0px 0px 25px 25px;
+    }
+    .header-items-right {
+        padding-bottom: 56px;
+    }
+
+
+    .logo { margin: auto; }
+    .header-items-left {
+        margin: auto;
+        display: block;
+
+    }
+    .header-item-container {
+        width: 100%;
+        padding: 0;
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+    .header-item {
+        text-align: center;
+    }
+    .header-download-container {
+        padding: 0;
+        margin: auto;
+    }
+
+
+    .menu {
+        display: block;
+    }
+}
+
 </style>
