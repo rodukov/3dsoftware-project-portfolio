@@ -79,8 +79,8 @@ export default {
         height: 80%;
         width: 80%;
     }
-    .main { font-size: 70px; }
-    .desc { font-size: 22px; }
+    .main { font-size: 55px; }
+    .desc { font-size: 18px; }
     .welcome { margin: 6px ; }
 }
 </style>
